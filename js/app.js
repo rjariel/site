@@ -852,15 +852,15 @@ const EARLIER = [{
   date: "Sep 2013 — Apr 2014"
 }, {
   title: "Mid-level Web Developer",
-  company: "SSAP Asia Inc.",
+  company: "SEOP Asia Inc.",
   date: "Jan 2012 — May 2013"
 }, {
   title: "Software Engineer",
-  company: "Gnammers Philippines Inc.",
-  date: ""
+  company: "Greenova Philippines Inc.",
+  date: "Jan 2011 — Jan 2012"
 }, {
   title: "Creative Developer / QA",
-  company: "Webcoll Technology Services",
+  company: "Wideout Technology Services",
   date: "Oct 2008 — Dec 2010"
 }];
 const STACK = [{
@@ -993,37 +993,70 @@ function Nav({
   active
 }) {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
-    window.addEventListener("scroll", onScroll, {
-      passive: true
-    });
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+  useEffect(() => {
+    if (!menuOpen) return;
+    const handler = (e) => {
+      if (!e.target.closest('.nav') && !e.target.closest('.nav-mobile-panel')) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener('click', handler);
+    return () => document.removeEventListener('click', handler);
+  }, [menuOpen]);
   const links = ["About", "Services", "Experience", "Stack", "Contact"];
-  return /*#__PURE__*/React.createElement("header", {
-    className: `nav ${scrolled ? "scrolled" : ""}`
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "wrap nav-row"
-  }, /*#__PURE__*/React.createElement("a", {
-    href: "#top",
-    className: "logo",
-    "aria-label": "RJariel home"
-  }, "RJARIEL", /*#__PURE__*/React.createElement("span", {
-    className: "dot"
-  }, ".")), /*#__PURE__*/React.createElement("nav", {
-    className: "nav-links"
-  }, links.map(l => /*#__PURE__*/React.createElement("a", {
+  const close = () => setMenuOpen(false);
+  const navItems = links.map(l => /*#__PURE__*/React.createElement("a", {
     key: l,
     href: `#${l.toLowerCase()}`,
-    className: active === l.toLowerCase() ? "active" : ""
-  }, l))), /*#__PURE__*/React.createElement("a", {
-    href: "#contact",
-    className: "hire-btn"
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "pulse"
-  }), "Hire Me")));
+    className: active === l.toLowerCase() ? "active" : "",
+    onClick: close
+  }, l));
+  return /*#__PURE__*/React.createElement(React.Fragment, null,
+    /*#__PURE__*/React.createElement("header", {
+      className: `nav ${scrolled ? "scrolled" : ""}`
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "wrap nav-row"
+    }, /*#__PURE__*/React.createElement("a", {
+      href: "#top",
+      className: "logo",
+      "aria-label": "RJariel home"
+    }, "RJARIEL", /*#__PURE__*/React.createElement("span", {
+      className: "dot"
+    }, ".")), /*#__PURE__*/React.createElement("nav", {
+      className: "nav-links"
+    }, navItems), /*#__PURE__*/React.createElement("a", {
+      href: CONTACT_URL,
+      target: "_blank",
+      rel: "noopener noreferrer",
+      className: "hire-btn nav-hire"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "pulse"
+    }), "Hire Me"), /*#__PURE__*/React.createElement("button", {
+      className: `burger${menuOpen ? " open" : ""}`,
+      onClick: () => setMenuOpen(o => !o),
+      "aria-label": "Toggle menu",
+      "aria-expanded": menuOpen
+    }, /*#__PURE__*/React.createElement("span", null), /*#__PURE__*/React.createElement("span", null), /*#__PURE__*/React.createElement("span", null)))),
+    /*#__PURE__*/React.createElement("div", {
+      className: `nav-mobile-panel${menuOpen ? " open" : ""}`,
+      "aria-hidden": !menuOpen
+    }, navItems, /*#__PURE__*/React.createElement("a", {
+      href: CONTACT_URL,
+      target: "_blank",
+      rel: "noopener noreferrer",
+      className: "hire-btn nav-hire-mobile",
+      onClick: close
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "pulse"
+    }), "Hire Me"))
+  );
 }
 function Hero() {
   const ref = useReveal(0.05);
@@ -1090,7 +1123,9 @@ function Hero() {
   }, /*#__PURE__*/React.createElement("p", null, "A decade of building web systems that ", /*#__PURE__*/React.createElement("strong", null, "connect, automate, and perform"), " \u2014 from custom WordPress & WooCommerce to AI-driven workflows, FastAPI integrations, and n8n automation."), /*#__PURE__*/React.createElement("div", {
     className: "hero-cta"
   }, /*#__PURE__*/React.createElement("a", {
-    href: "#contact",
+    href: CONTACT_URL,
+    target: "_blank",
+    rel: "noopener noreferrer",
     className: "btn-primary"
   }, "Start a project", /*#__PURE__*/React.createElement("span", {
     className: "arrow"
@@ -1435,7 +1470,9 @@ function Contact() {
       color: "var(--paper)"
     }
   }, "let's talk"), "."), /*#__PURE__*/React.createElement("a", {
-    href: "mailto:jarielweb@gmail.com",
+    href: CONTACT_URL,
+    target: "_blank",
+    rel: "noopener noreferrer",
     className: "contact-btn reveal",
     style: {
       "--reveal-delay": "280ms"
@@ -1515,6 +1552,9 @@ function Footer() {
   }, "\xA9 2026 Rey Lester Jariel. All rights reserved.")));
 }
 
+// ---------- CONTACT FORM ----------
+const CONTACT_URL = "https://docs.google.com/forms/d/e/1FAIpQLScR1qMMKdX2RfTYCqGo575IGdirORmth5CMuCHnbKZ6W8_dZQ/viewform?usp=dialog";
+
 // ---------- TWEAKS ----------
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "accent": "#D40000",
@@ -1536,7 +1576,13 @@ function App() {
     const ids = ["about", "services", "experience", "stack", "contact"];
     const sections = ids.map(id => document.getElementById(id)).filter(Boolean);
     const onScroll = () => {
-      const y = window.scrollY + 120;
+      // If scrolled to (or near) the bottom, always mark the last section active
+      const atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 64;
+      if (atBottom) {
+        setActive(ids[ids.length - 1]);
+        return;
+      }
+      const y = window.scrollY + Math.min(window.innerHeight * 0.45, 300);
       let current = "";
       for (const s of sections) {
         if (s.offsetTop <= y) current = s.id;
