@@ -1,3 +1,42 @@
+/* STACK PILL */
+.stack-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+  background: rgba(22,22,22,0.07);
+  border: 1px solid rgba(22,22,22,0.14);
+  border-radius: 999px;
+  padding: 0.1em 0.42em 0.1em 0.32em;
+  font-size: 0.5em;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+/* WORD SWAP */
+.word-swap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
+  line-height: 1;
+}
+.word-swap-inner {
+  display: inline-block;
+  color: var(--accent);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+  transform: translateY(0);
+  opacity: 1;
+  white-space: nowrap;
+}
+.word-swap-inner.ws-exiting {
+  transform: translateY(-115%);
+  opacity: 0;
+}
+.word-swap-inner.ws-entering {
+  transform: translateY(115%);
+  opacity: 0;
+  transition: none;
+}
+
 :root {
   --ink: #161616;
   --paper: #fafafa;
@@ -268,6 +307,42 @@ button { font-family: inherit; cursor: pointer; }
   font-weight: 400;
 }
 .hero h1 .accent-mark { color: var(--accent); -webkit-text-stroke: 0; }
+
+/* Word swapper */
+.word-swapper {
+  overflow: hidden;
+  display: block;
+}
+.word-swapper-inner {
+  display: block;
+  color: var(--accent);
+  will-change: transform, opacity;
+}
+.word-swapper-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: none;
+}
+.word-swapper-exit {
+  opacity: 0;
+  transform: translateY(-28px);
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.word-swapper-enter {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.32s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: wordEnter 0.32s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+@keyframes wordEnter {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .word-swapper-exit, .word-swapper-enter { transition: none; animation: none; }
+}
 
 .hero-body {
   margin-top: 56px;

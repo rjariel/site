@@ -331,6 +331,39 @@ Object.assign(window, { useTweaks, TweaksPanel, TweakSection, TweakRow, TweakSli
 
 const { useState, useEffect, useRef } = React;
 
+// ---------- WORD SWAP ----------
+const SWAP_WORDS = ["WordPress", "Python", "Claude Code", "Replit", "FastAPI", "N8N", "AI Assisted", "Prompt Engineering", "Webhooks", "Ecommerce", "PostgreSQL", "Zero Manual Work"];
+
+function WordSwap({ words }) {
+  const [current, setCurrent] = useState(0);
+  const [cls, setCls] = useState('');
+  const timerRef = useRef(null);
+
+  useEffect(() => {
+    const HOLD = 2400;
+    const TRANSITION = 420;
+    const cycle = () => {
+      timerRef.current = setTimeout(() => {
+        setCls('ws-exiting');
+        setTimeout(() => {
+          setCurrent(i => (i + 1) % words.length);
+          setCls('ws-entering');
+          requestAnimationFrame(() => requestAnimationFrame(() => {
+            setCls('');
+            cycle();
+          }));
+        }, TRANSITION);
+      }, HOLD);
+    };
+    cycle();
+    return () => clearTimeout(timerRef.current);
+  }, [words.length]);
+
+  return React.createElement('span', { className: 'word-swap' },
+    React.createElement('span', { className: `word-swap-inner ${cls}` }, words[current])
+  );
+}
+
 // ---------- DATA ----------
 const SERVICES = [{
   title: "AI Agents & LLM Integration",
@@ -621,7 +654,19 @@ function Hero() {
         React.createElement("span", { className: "reveal", style: { "--reveal-delay": "120ms", display: "block" } }, "AI Automation"),
         React.createElement("span", { className: "reveal stroke", style: { "--reveal-delay": "220ms", display: "block" } },
           "Engineer", React.createElement("span", { className: "accent-mark" }, ".")),
-        React.createElement("span", { className: "reveal", style: { "--reveal-delay": "320ms", display: "block", fontSize: "0.28em", fontWeight: 600, letterSpacing: "0.06em", color: "var(--muted)", marginTop: "0.5em", textTransform: "uppercase" } }, "Senior WordPress Developer")
+        React.createElement("span", { className: "reveal", style: { "--reveal-delay": "320ms", display: "block", fontSize: "0.28em", fontWeight: 600, letterSpacing: "0.06em", color: "var(--muted)", marginTop: "0.5em", textTransform: "uppercase" } },
+  React.createElement("span", { className: "stack-pill", style: { color: "var(--muted)" } },
+    React.createElement("svg", { width: "0.85em", height: "0.85em", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round" },
+      React.createElement("polygon", { points: "12 2 2 7 12 12 22 7 12 2" }),
+      React.createElement("polyline", { points: "2 17 12 22 22 17" }),
+      React.createElement("polyline", { points: "2 12 12 17 22 12" })
+    ),
+    "Stack"
+  ),
+  React.createElement("span", { style: { color: "var(--muted)", verticalAlign: "middle", margin: "0 0.2em 0 0.35em" } }, "{"),
+  React.createElement(WordSwap, { words: SWAP_WORDS }),
+  React.createElement("span", { style: { color: "var(--muted)", verticalAlign: "middle", marginLeft: "0.2em" } }, "}")
+)
       ),
       React.createElement("div", { className: "hero-body" },
         React.createElement("div", { className: "hero-blurb reveal", style: { "--reveal-delay": "460ms" } },

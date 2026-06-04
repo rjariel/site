@@ -1058,6 +1058,38 @@ function Nav({
     }), "Hire Me"))
   );
 }
+function WordSwapper() {
+  const words = ["Python", "FastAPI", "WordPress", "N8N"];
+  const [index, setIndex] = React.useState(0);
+  const [phase, setPhase] = React.useState("visible"); // "visible" | "exit" | "enter"
+
+  React.useEffect(() => {
+    const pause = 2600;
+    const exitDur = 320;
+    const enterDur = 320;
+
+    const timer = setTimeout(() => {
+      setPhase("exit");
+      setTimeout(() => {
+        setIndex(i => (i + 1) % words.length);
+        setPhase("enter");
+        setTimeout(() => {
+          setPhase("visible");
+        }, enterDur);
+      }, exitDur);
+    }, pause);
+
+    return () => clearTimeout(timer);
+  }, [index]);
+
+  return /*#__PURE__*/React.createElement("span", {
+    className: "word-swapper reveal",
+    style: { "--reveal-delay": "220ms", display: "block" }
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "word-swapper-inner word-swapper-" + phase
+  }, words[index]));
+}
+
 function Hero() {
   const ref = useReveal(0.05);
   return /*#__PURE__*/React.createElement("section", {
@@ -1099,13 +1131,7 @@ function Hero() {
       "--reveal-delay": "120ms",
       display: "block"
     }
-  }, "Senior"), /*#__PURE__*/React.createElement("span", {
-    className: "reveal",
-    style: {
-      "--reveal-delay": "220ms",
-      display: "block"
-    }
-  }, "WordPress"), /*#__PURE__*/React.createElement("span", {
+  }, "Senior"), /*#__PURE__*/React.createElement(WordSwapper, null), /*#__PURE__*/React.createElement("span", {
     className: "reveal stroke",
     style: {
       "--reveal-delay": "320ms",
