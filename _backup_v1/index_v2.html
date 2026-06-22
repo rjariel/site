@@ -3,31 +3,11 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Rey Jariel — Senior WordPress Developer | WooCommerce, SEO &amp; AI Automation</title>
-<meta name="description" content="Senior WordPress Developer with 15+ years building fast, secure WordPress and WooCommerce sites — custom themes, REST API integrations, performance tuning, and SEO, backed by AI-augmented development and AI specialties." />
-<meta property="og:title" content="Rey Jariel — Senior WordPress Developer" />
-<meta property="og:description" content="15+ years of senior WordPress and WooCommerce engineering, performance optimization, and AI-powered automation." />
-<meta property="og:type" content="website" />
+<title>Rey Lester Jariel — AI Automation Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" />
 <link rel="stylesheet" href="css/styles.css" />
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Rey Jariel — Senior WordPress Developer",
-  "description": "Senior WordPress Developer specializing in WordPress, WooCommerce, performance, SEO and AI automation.",
-  "email": "jarielweb@gmail.com",
-  "founder": {
-    "@type": "Person",
-    "name": "Rey Lester Jariel",
-    "jobTitle": "Senior WordPress Developer"
-  },
-  "areaServed": "Worldwide",
-  "priceRange": "$$"
-}
-</script>
 </head>
 <body>
   <div id="root"></div>
@@ -353,6 +333,22 @@ const { useState, useEffect, useRef } = React;
 
 // ---------- DATA ----------
 const SERVICES = [{
+  title: "AI Agents & LLM Integration",
+  desc: "End-to-end AI agent pipelines, RAG systems, tool-calling flows, and OpenAI / Claude API integrations — production-ready and embedded in any web stack.",
+  icon: React.createElement("svg", { width: "20", height: "20", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.6" },
+    React.createElement("rect", { x: "4", y: "6", width: "16", height: "12", rx: "2" }),
+    React.createElement("circle", { cx: "9", cy: "12", r: "1.2", fill: "currentColor" }),
+    React.createElement("circle", { cx: "15", cy: "12", r: "1.2", fill: "currentColor" }),
+    React.createElement("path", { d: "M12 2v4M9 18l-2 4M15 18l2 4" }))
+}, {
+  title: "Workflow Automation",
+  desc: "Scalable automation with n8n and Make — webhook pipelines, CRM syncs, multi-app orchestration, and hands-off workflows with built-in error handling and retry logic.",
+  icon: React.createElement("svg", { width: "20", height: "20", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.6" },
+    React.createElement("circle", { cx: "5", cy: "6", r: "2" }),
+    React.createElement("circle", { cx: "19", cy: "6", r: "2" }),
+    React.createElement("circle", { cx: "12", cy: "18", r: "2" }),
+    React.createElement("path", { d: "M7 7l4 9M17 7l-4 9" }))
+}, {
   title: "WordPress Development",
   desc: "Custom themes, child themes, Gutenberg blocks, CPTs, and full plugin development following WordPress coding standards.",
   icon: React.createElement("svg", { width: "20", height: "20", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.6" },
@@ -366,37 +362,21 @@ const SERVICES = [{
     React.createElement("circle", { cx: "18", cy: "20", r: "1.5" }),
     React.createElement("path", { d: "M3 4h2l2 12h13l2-8H6" }))
 }, {
-  title: "Performance & SEO",
-  desc: "Core Web Vitals optimization, JSON-LD schema markup, technical SEO audits, and sub-2s load time targeting.",
-  icon: React.createElement("svg", { width: "20", height: "20", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.6" },
-    React.createElement("path", { d: "M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" }))
-}, {
   title: "REST APIs & Headless",
   desc: "Custom REST endpoints, WP-JSON extensions, decoupled WordPress backends, and third-party API integrations.",
   icon: React.createElement("svg", { width: "20", height: "20", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.6" },
     React.createElement("path", { d: "M8 4l-4 8 4 8M16 4l4 8-4 8M14 4l-4 16" }))
 }, {
-  title: "Workflow Automation",
-  desc: "Scalable automation with n8n and Make — webhook pipelines, CRM syncs, multi-app orchestration, and hands-off workflows with built-in error handling and retry logic.",
+  title: "Performance & SEO",
+  desc: "Core Web Vitals optimization, JSON-LD schema markup, technical SEO audits, and sub-2s load time targeting.",
   icon: React.createElement("svg", { width: "20", height: "20", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.6" },
-    React.createElement("circle", { cx: "5", cy: "6", r: "2" }),
-    React.createElement("circle", { cx: "19", cy: "6", r: "2" }),
-    React.createElement("circle", { cx: "12", cy: "18", r: "2" }),
-    React.createElement("path", { d: "M7 7l4 9M17 7l-4 9" }))
-}, {
-  title: "AI Agents & LLM Integration",
-  desc: "End-to-end AI agent pipelines, RAG systems, tool-calling flows, and OpenAI / Claude API integrations — production-ready and embedded in any web stack.",
-  icon: React.createElement("svg", { width: "20", height: "20", viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: "1.6" },
-    React.createElement("rect", { x: "4", y: "6", width: "16", height: "12", rx: "2" }),
-    React.createElement("circle", { cx: "9", cy: "12", r: "1.2", fill: "currentColor" }),
-    React.createElement("circle", { cx: "15", cy: "12", r: "1.2", fill: "currentColor" }),
-    React.createElement("path", { d: "M12 2v4M9 18l-2 4M15 18l2 4" }))
+    React.createElement("path", { d: "M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" }))
 }];
 
 const EXPERIENCE = [{
   date: "Feb 2026 — Present",
   company: "Freelance",
-  title: "Senior WordPress Developer & AI Specialist",
+  title: "AI Automation Engineer & Senior WordPress Developer",
   current: true,
   bullets: [
     "Architected multi-step AI agent pipelines using OpenAI and Claude APIs — tool-calling, RAG-backed retrieval, and structured output flows — deployed on Replit and FastAPI backends, cutting manual content and data operations by over 70%.",
@@ -473,33 +453,33 @@ const EARLIER = [{
 }];
 
 const STACK = [{
+  label: "n8n", featured: true
+}, {
+  label: "Make (Integromat)"
+}, {
+  label: "Replit", featured: true
+}, {
+  label: "OpenAI API", featured: true
+}, {
+  label: "Claude API", featured: true
+}, {
+  label: "AI Agents"
+}, {
+  label: "Python (FastAPI)", featured: true
+}, {
   label: "WordPress", featured: true
 }, {
   label: "WooCommerce", featured: true
 }, {
-  label: "PHP 8", featured: true
+  label: "PHP 8"
 }, {
-  label: "ACF Pro", featured: true
+  label: "ACF Pro"
 }, {
   label: "Gutenberg Block API"
 }, {
   label: "WP Engine"
 }, {
   label: "cPanel / Plesk"
-}, {
-  label: "n8n", featured: true
-}, {
-  label: "Make (Integromat)"
-}, {
-  label: "Replit"
-}, {
-  label: "OpenAI API"
-}, {
-  label: "Claude API", featured: true
-}, {
-  label: "AI Agents"
-}, {
-  label: "Python (FastAPI)"
 }, {
   label: "JavaScript (ES2024)"
 }, {
@@ -635,19 +615,19 @@ function Hero() {
         React.createElement("span", { className: "sep" }, "/"),
         React.createElement("div", { className: "status", style: { color: "var(--muted)" } }, "Based in the Philippines"),
         React.createElement("span", { className: "sep" }, "/"),
-        React.createElement("div", { className: "status", style: { color: "var(--muted)" } }, "15+ Years Experience")
+        React.createElement("div", { className: "status", style: { color: "var(--muted)" } }, "Since 2008")
       ),
       React.createElement("h1", { className: "display" },
-        React.createElement("span", { className: "reveal", style: { "--reveal-delay": "120ms", display: "block" } }, "Senior WordPress"),
+        React.createElement("span", { className: "reveal", style: { "--reveal-delay": "120ms", display: "block" } }, "AI Automation"),
         React.createElement("span", { className: "reveal stroke", style: { "--reveal-delay": "220ms", display: "block" } },
-          "Developer", React.createElement("span", { className: "accent-mark" }, ".")),
-        React.createElement("span", { className: "reveal", style: { "--reveal-delay": "270ms", display: "block", fontSize: "0.55em", fontWeight: 900, letterSpacing: "0.02em", color: "var(--accent)", textTransform: "uppercase" } }, "AI SPECIALIST")
+          "Engineer", React.createElement("span", { className: "accent-mark" }, ".")),
+        React.createElement("span", { className: "reveal", style: { "--reveal-delay": "320ms", display: "block", fontSize: "0.28em", fontWeight: 600, letterSpacing: "0.06em", color: "var(--muted)", marginTop: "0.5em", textTransform: "uppercase" } }, "Senior WordPress Developer")
       ),
       React.createElement("div", { className: "hero-body" },
         React.createElement("div", { className: "hero-blurb reveal", style: { "--reveal-delay": "460ms" } },
           React.createElement("p", null,
-            "Fifteen-plus years of WordPress and WooCommerce builds, now sped up with ", React.createElement("strong", null, "AI-augmented development"),
-            " — REST API integrations, AI agents, and automation that cut build time without cutting corners."
+            "Building intelligent systems that ", React.createElement("strong", null, "automate, integrate, and scale"),
+            " — AI agent pipelines, n8n & Make workflows, WordPress-powered backends, and LLM-driven tools that eliminate manual work entirely."
           ),
           React.createElement("div", { className: "hero-cta" },
             React.createElement("a", { href: CONTACT_URL, target: "_blank", rel: "noopener noreferrer", className: "btn-primary" },
@@ -659,10 +639,10 @@ function Hero() {
           React.createElement("div", { style: { textAlign: "right", display: "flex", flexDirection: "column", gap: 8 } },
             React.createElement("div", { className: "eyebrow" }, "Currently shipping"),
             React.createElement("div", { style: { fontFamily: "var(--sans)", fontSize: 22, fontWeight: 700, letterSpacing: "-0.01em", lineHeight: 1.25, textTransform: "uppercase" } },
-              "Performance-Tuned", React.createElement("br", null),
-              React.createElement("span", { style: { fontWeight: 900 } }, "WordPress"), " Builds"
+              "AI-Powered", React.createElement("br", null),
+              React.createElement("span", { style: { fontWeight: 900 } }, "Automation"), " Pipelines"
             ),
-            React.createElement("div", { className: "eyebrow accent", style: { marginTop: 4 } }, "↗ WordPress \xB7 WooCommerce \xB7 PHP")
+            React.createElement("div", { className: "eyebrow accent", style: { marginTop: 4 } }, "↗ n8n \xB7 Claude \xB7 Replit")
           )
         )
       )
@@ -670,17 +650,17 @@ function Hero() {
     React.createElement("div", { className: "marquee" },
       React.createElement("div", { className: "marquee-track" },
         [0, 1].map(k => React.createElement("span", { key: k },
-          "WordPress ", React.createElement("span", { className: "marquee-dot" }),
-          "WooCommerce ", React.createElement("span", { className: "marquee-dot" }),
-          "PHP ", React.createElement("span", { className: "marquee-dot" }),
-          "Performance ", React.createElement("span", { className: "marquee-dot" }),
-          "SEO ", React.createElement("span", { className: "marquee-dot" }),
-          "Gutenberg ", React.createElement("span", { className: "marquee-dot" }),
-          "Headless ", React.createElement("span", { className: "marquee-dot" }),
           "AI Automation ", React.createElement("span", { className: "marquee-dot" }),
           "n8n ", React.createElement("span", { className: "marquee-dot" }),
+          "Replit ", React.createElement("span", { className: "marquee-dot" }),
+          "Make ", React.createElement("span", { className: "marquee-dot" }),
           "Claude ", React.createElement("span", { className: "marquee-dot" }),
-          "OpenAI ", React.createElement("span", { className: "marquee-dot" })
+          "OpenAI ", React.createElement("span", { className: "marquee-dot" }),
+          "WordPress ", React.createElement("span", { className: "marquee-dot" }),
+          "WooCommerce ", React.createElement("span", { className: "marquee-dot" }),
+          "FastAPI ", React.createElement("span", { className: "marquee-dot" }),
+          "Headless ", React.createElement("span", { className: "marquee-dot" }),
+          "Performance ", React.createElement("span", { className: "marquee-dot" })
         ))
       )
     )
@@ -703,27 +683,27 @@ function About() {
   return React.createElement("section", { id: "about", ref },
     React.createElement("div", { className: "wrap" },
       React.createElement(SectionHead, { eyebrow: "About", kicker: "The short version, before we get to the receipts." },
-        "I build WordPress", React.createElement("br", null), "sites that ", React.createElement("span", { className: "ital", style: { color: "var(--accent)" } }, "actually"), " perform."
+        "I build things", React.createElement("br", null), "people ", React.createElement("span", { className: "ital", style: { color: "var(--accent)" } }, "actually"), " use."
       ),
       React.createElement("div", { className: "about-grid" },
         React.createElement("div", { className: "about-copy reveal" },
           React.createElement("p", null,
-            "I'm ", React.createElement("strong", null, "Rey Lester Jariel"), " — a ",
-            React.createElement("span", { className: "serif" }, "WordPress Developer with AI-augmented development workflows and AI specialties"),
-            ", based in the Philippines. My work lives at the intersection of",
-            React.createElement("span", { className: "accent-text" }, " production WordPress and WooCommerce engineering, REST API integrations, performance, and SEO"),
+            "I'm ", React.createElement("strong", null, "Rey Lester Jariel"), " — ",
+            React.createElement("span", { className: "serif" }, "AI Automation Engineer & WordPress Developer"),
+            " based in the Philippines. My work lives at the intersection of",
+            React.createElement("span", { className: "accent-text" }, " AI-driven automation, LLM integration, and production web engineering"),
             ". I own projects end-to-end and speak fluent stakeholder — marketing, design, ops, whoever's in the room."
           ),
           React.createElement("p", null,
-            "I've shipped custom themes, plugins, WooCommerce builds, and API integrations for 15+ years, engineered Core Web Vitals wins that directly moved organic traffic, and led teams through complex CMS migrations.",
-            React.createElement("span", { className: "serif" }, " These days I build with AI-augmented tooling and layer in AI agent pipelines and n8n / Make automation — so WordPress is still home base, just running smarter underneath.")
+            "I've built multi-step AI agent pipelines on Replit and FastAPI, wired OpenAI and Claude APIs into production workflows, and engineered n8n and Make automations that quietly replace entire manual processes.",
+            React.createElement("span", { className: "serif" }, " WordPress and WooCommerce are still home base — now powered by smarter systems underneath.")
           )
         ),
         React.createElement("div", { className: "stats reveal", style: { "--reveal-delay": "120ms" } },
           React.createElement("div", { className: "stat" },
-            React.createElement("div", { className: "stat-num" }, React.createElement(CountUp, { target: 15, suffix: "+" })),
+            React.createElement("div", { className: "stat-num" }, React.createElement(CountUp, { target: 10, suffix: "+" })),
             React.createElement("div", { className: "stat-label" }, "Years of experience"),
-            React.createElement("div", { className: "stat-note" }, "Senior-level, end to end.")
+            React.createElement("div", { className: "stat-note" }, "Since 2008.")
           ),
           React.createElement("div", { className: "stat" },
             React.createElement("div", { className: "stat-num" }, React.createElement(CountUp, { target: 50, suffix: "+" })),
@@ -768,7 +748,7 @@ function Services() {
     React.createElement("div", { className: "wrap" },
       React.createElement(SectionHead, {
         eyebrow: "What I do",
-        kicker: React.createElement(React.Fragment, null, "Six specialties. ", React.createElement("span", { style: { fontStyle: "italic" } }, "One home base"), " — WordPress done right, automated where it counts.")
+        kicker: React.createElement(React.Fragment, null, "Six specialties. ", React.createElement("span", { style: { fontStyle: "italic" } }, "One signature"), " — make the manual parts disappear.")
       }, "Services", React.createElement("span", { style: { color: "var(--accent)" } }, ".")),
       React.createElement("div", { className: "services-grid" },
         SERVICES.map((s, i) => React.createElement("div", { className: "service reveal", key: s.title, style: { "--reveal-delay": `${i * 70}ms` } },
@@ -788,7 +768,7 @@ function Experience() {
     React.createElement("div", { className: "wrap" },
       React.createElement(SectionHead, {
         eyebrow: "Work history",
-        kicker: React.createElement(React.Fragment, null, "Fifteen-plus years. ", React.createElement("span", { style: { fontStyle: "italic" } }, "Same craft"), ", sharper every cycle.")
+        kicker: React.createElement(React.Fragment, null, "Twenty-one years. ", React.createElement("span", { style: { fontStyle: "italic" } }, "Same craft"), ", sharper every cycle.")
       }, "Experience", React.createElement("span", { style: { color: "var(--accent)" } }, ".")),
       React.createElement("div", { className: "experience-list" },
         EXPERIENCE.map((x, idx) => React.createElement("div", { className: "xp-row reveal", key: x.title + x.date, style: { "--reveal-delay": `${idx * 80}ms` } },
@@ -851,7 +831,7 @@ function Contact() {
         "Have a project", React.createElement("br", null), React.createElement("span", { className: "accent-text" }, "in mind?")
       ),
       React.createElement("p", { className: "contact-sub reveal", style: { "--reveal-delay": "200ms" } },
-        "A sluggish WordPress site costing you traffic, a WooCommerce store that needs to convert better, or an automation pipeline — ",
+        "Automation pipeline, AI integration, or a sluggish WordPress site that's costing you traffic — ",
         React.createElement("span", { style: { fontWeight: 900, color: "var(--paper)" } }, "let's talk"), "."
       ),
       React.createElement("a", { href: CONTACT_URL, target: "_blank", rel: "noopener noreferrer", className: "contact-btn reveal", style: { "--reveal-delay": "280ms" } },
@@ -870,7 +850,7 @@ function Footer() {
     React.createElement("div", { className: "wrap" },
       React.createElement("div", { className: "footer-top" },
         React.createElement("a", { href: "#top", className: "logo" }, "RJARIEL", React.createElement("span", { style: { color: "var(--accent)" } }, ".")),
-        React.createElement("div", { className: "footer-tag" }, "Senior WordPress Developer & AI Specialist"),
+        React.createElement("div", { className: "footer-tag" }, "AI Automation Engineer & WordPress Developer"),
         React.createElement("div", { className: "socials" },
           React.createElement("a", { href: "https://github.com/rjariel", "aria-label": "GitHub", target: "_blank", rel: "noopener noreferrer" },
             React.createElement("svg", { width: "14", height: "14", viewBox: "0 0 24 24", fill: "currentColor" },
